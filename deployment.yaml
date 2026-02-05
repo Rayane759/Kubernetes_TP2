@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-server
+  labels:
+    app: echo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: echo
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+        - name: api-python
+          image: guenolee/tp1-api-python:latest
+          args:
+            - "-text=Hello Kubernetes!"
+          ports:
+            - containerPort: 5678
