@@ -1,3 +1,6 @@
+Compte-rendu TP2
+
+
 1) Afficher la liste des pods
 
 La commande est : "kubectl get pods"
@@ -41,3 +44,7 @@ La commande est "kubectl describe pod mon-pod".
 
 On obtient de nombreuses informations sur l'application : son nom, statut, date de lancement, adresse IP, ID de l'image, …
 
+
+
+
+PS : Ce compte-rendu est accompagné de captures d'écran au sein du git dans le dossier "images"
