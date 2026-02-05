@@ -1,0 +1,43 @@
+1) Afficher la liste des pods
+
+La commande est : "kubectl get pods"
+
+En plus de la console VSCode, on peut voir le pod "mon-pod" qui s'est bien lancé grâce
+à la commande "kubectl apply -f pod.yaml"
+
+
+2) Afficher la liste des deployments
+
+La commande est : "kubectl get deployments"
+
+On voit que le deployment s'est bien passé, les 3 "replicas" se sont bien lancées. 
+Cela se confirme avec les 3 pods "echo-server-..." présents lorsqu'on fait la
+commande "kubectl get pods".
+
+
+3) Regarder les logs
+
+On exécute le pod avec la commande : "kubectl exec -it mon-pod -- /bin/sh".
+
+On arrive sur un terminal où on peut entrer la commande "curl http://localhost:8000/hello".
+
+L'application nous renvoie effectivement "world".
+
+On quitte ce terminal puis on exécute la commande "kubectl logs mon-pod" pour voir les logs.
+On remarque les appels à l'API réalisés auparavant.
+
+
+4) Lister les dépendances de l'application
+
+On exécute le pod avec la commande : "kubectl exec -it mon-pod -- /bin/sh".
+
+On arrive sur un terminal où on peut entrer la commande "pip list" (car c'est une API Python) qui 
+nous permet donc d'obtenir les dépendances de l'application.
+
+
+5) Récupérer une description complète de l'application
+
+La commande est "kubectl describe pod mon-pod".
+
+On obtient de nombreuses informations sur l'application : son nom, statut, date de lancement, adresse IP, ID de l'image, …
+
